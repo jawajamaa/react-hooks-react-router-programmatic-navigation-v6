@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function Login() {
+  const login = useOutletContext();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
