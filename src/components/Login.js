@@ -17,11 +17,12 @@ function Login() {
 
   function handleLogin(e) {
     e.preventDefault();
+    login();
   }
 
   return (
     <form onSubmit={handleLogin}>
-      <label for="username">Username</label>
+      <label htmlFor="username">Username</label>
       <div>
         <input
           id="username"
@@ -31,7 +32,9 @@ function Login() {
           onChange={handleChange}
         />
       </div>
-      <label for="password">Password</label>
+      <label htmlFor="password">Password</label>
+      {/* <label for="password">Password</label> */}
+      {/* lines 25 and 36 used a 'for' prop instead of htmlFor and the browser would throw an error as well as the formatting of the site was wonky */}
       <div>
         <input
           id="password"
@@ -44,6 +47,6 @@ function Login() {
       <button type="submit">Login</button>
     </form>
   );
-}
+};
 
 export default Login;
